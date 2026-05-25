@@ -1,0 +1,186 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Darknet Mirror Detection Whitepaper</title>
+            
+<style>
+    body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max_width: 800px;
+        margin: 0 auto;
+        padding: 40px;
+        background-color: #fff;
+    }
+    h1 {
+        color: #2c3e50;
+        border-bottom: 2px solid #2c3e50;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+    h2 {
+        color: #34495e;
+        margin-top: 30px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+    }
+    h3 {
+        color: #7f8c8d;
+        margin-top: 25px;
+    }
+    code {
+        background-color: #f8f9fa;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-family: 'Monaco', 'Consolas', monospace;
+        color: #e74c3c;
+    }
+    pre {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #e1e4e8;
+        overflow-x: auto;
+    }
+    pre code {
+        background-color: transparent;
+        padding: 0;
+        color: #333;
+    }
+    blockquote {
+        border-left: 4px solid #3498db;
+        margin: 0;
+        padding-left: 20px;
+        color: #555;
+        background-color: #f1f9ff;
+        padding: 10px 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+        color: #333;
+    }
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    .footer {
+        margin-top: 50px;
+        text-align: center;
+        font-size: 0.8em;
+        color: #999;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+    }
+</style>
+
+        </head>
+        <body>
+            <h1>Darknet Mirror Detection System v2.0: Technical Whitepaper &amp; User Guide</h1>
+<h2>1. Executive Summary: The Paradigm Shift</h2>
+<p>We have successfully transitioned the system from a basic "Prototype Comparator" to a <strong>Production-Grade Repository Scanner</strong>.</p>
+<ul>
+<li><strong>Old Way (Phase 1)</strong>: You had to manually provide a "Trusted URL" and a "Suspect URL" every single time. It was a 1-to-1 comparison that required you to already know the real site.</li>
+<li><strong>New Way (Phase 2)</strong>: You build a <strong>Local Intelligence Repository</strong>. You ingest trusted sites once. Then, you can scan <em>any</em> suspicious link against your entire database. The system calculates similarity scores against <em>every</em> known market to find the true identity.</li>
+</ul>
+<hr />
+<h2>2. System Architecture</h2>
+<h3>A. Network Layer (The Tor Tunnel)</h3>
+<p>The system does not use the standard internet. It routes all traffic through a <strong>SOCKS5 Proxy</strong> tunnel check.
+*   <strong>Auto-Detection</strong>: <code>verify_tor.py</code> logic automatically scans local ports.
+    *   Checks Port <code>9050</code> (System Tor Service).
+    *   Checks Port <code>9150</code> (Tor Browser Bundle).
+*   <strong>Routing</strong>: All <code>.onion</code> requests in <code>pillar_1_http.py</code> and <code>crawler.py</code> are legally routed through this tunnel, anonymizing the analysis.</p>
+<h3>B. The Ingestion Engine (<code>crawler.py</code>)</h3>
+<p>This is the "Data Entry" pipeline that builds your database.
+1.  <strong>Request</strong>: Connects to the target <code>.onion</code> via Tor.
+2.  <strong>Fingerprint</strong>:
+    *   <strong>HTTP</strong>: Measures response time stability (mean, std dev) and server headers.
+    *   <strong>HTML</strong>: Captures the raw DOM structure (placeholder for deep DOM tree analysis).
+    *   <strong>PGP (Smart Hunt)</strong>:
+        *   <em>Attempt 1</em>: Regex scan the Homepage for <code>-----BEGIN PGP...</code>.
+        *   <em>Attempt 2</em>: If failed, automatically brute-force common locations: <code>/pgp.txt</code>, <code>/key.txt</code>, <code>/security.txt</code>.
+3.  <strong>Normalization</strong>: Converts raw data into a <code>SiteSignature</code> object.
+4.  <strong>Persistence</strong>: Saves the json blob to <code>fingerprints.json</code> via <code>storage.py</code>.</p>
+<h3>C. The Comparison Engine (<code>Scanner</code>)</h3>
+<p>When you scan a suspect URL, we don't just "diff" the text. We use a <strong>Feature Similarity Vector</strong>.</p>
+<h4>Pillar 1: HTTP Fingerprinting (Weight: 30%)</h4>
+<p>We compare the <em>behavior</em> of the server.
+*   <strong>Status Code (40%)</strong>: Does it return 200 OK like the real site, or a 403/404?
+*   <strong>Headers (30%)</strong>: Does it use the same <code>Server: nginx</code> or <code>X-Powered-By</code> headers?
+*   <strong>Timing (30%)</strong>: We calculate the "Response Time Ratio". If the suspect site is 5x slower or faster than the known site, it's penalized. Features are normalized to handle darknet latency fluctuations.</p>
+<h4>Pillar 4: PGP Cryptography (Weight: 70%)</h4>
+<p>This is the "Golden Signal". We use <code>pgpy</code> to perform deep inspection, not just string matching.
+*   <strong>Primary Fingerprint</strong>: Do the Master Key IDs match? (100% Score if yes).
+*   <strong>Subkey Overlap</strong>: Do the signing/encryption subkeys match? (95% Score).
+*   <strong>Key Attributes</strong>: If keys are missing, we check if the <em>Algorithm</em> (RSA-4096) and <em>Creation Date</em> align. A phishing site generating a fresh key today will likely fail the "Creation Date" check against a market founded in 2022.</p>
+<h4>Pillar 7: Deep Code Analysis &amp; Heuristics</h4>
+<p>The system performs forensic analysis on the site's underlying architecture.
+*   <strong>Code Signature</strong>: Generates a deterministic cryptographic hash of the site's unique architectural footprint, allowing for instant identification of codebase forks.
+*   <strong>Structure Integrity</strong>: A specialized heuristic engine that scores the site's DOM and script density against known "clean" marketplace templates to detect anomalies.
+*   <strong>Backend Latency</strong>: Precision measurement of the hidden service's processing time, utilizing statistical noise filtering to isolate server speed from Tor network lag.
+*   <strong>Search Query Time (P99)</strong>: Estimates the database load capability by measuring 99th percentile response times, distinguishing high-performance real markets from low-resource phishing clones.</p>
+<hr />
+<h2>3. Data Structures (<code>signatures.py</code>)</h2>
+<p>The system understands the world through <strong>Signatures</strong>:</p>
+<pre><code class="language-python">class SiteSignature:
+    url: str                # The .onion address
+    label: str              # e.g., &quot;AlphaBay&quot;
+    http: HTTPSignature     # {response_time, headers, status_code}
+    pgp: PGPSignature       # {fingerprints[], subkeys[], algorithms[]}
+    html: HTMLSignature     # {dom_depth, tags}
+</code></pre>
+<p>This decoupled structure allows us to add new pillars (like JA3 TLS fingerprinting) without breaking the database.</p>
+<hr />
+<h2>4. User Guide</h2>
+<h3>Mode A: Ingest (Build Your DB)</h3>
+<p>Use this when you have a <strong>Confirmed Real Link</strong> and want to save it ("Take a Snapshot").
+1.  <strong>Launch</strong>: <code>streamlit run dashboard.py</code>
+2.  <strong>Sidebar</strong>: Select <strong>Ingest Mode</strong>.
+3.  <strong>Input</strong>:
+    *   <em>URL</em>: <code>http://real-site-long-v3-onion.onion</code>
+    *   <em>Label</em>: <code>My Trusted Market</code>
+4.  <strong>Run</strong>: Click <strong>INGEST</strong>.
+    *   <em>System Action</em>: It crawls the site, hunts for PGP keys, and saves the profile to <code>fingerprints.json</code>.</p>
+<h3>Mode B: Scan (Hunt Phishing Sites)</h3>
+<p>Use this when you found a link on Reddit/Wiki and want to verify it.
+1.  <strong>Sidebar</strong>: Select <strong>Scanner Mode</strong>.
+2.  <strong>Input</strong>:
+    *   <em>URL</em>: <code>http://sketchy-link-distributed-on-telegram.onion</code>
+3.  <strong>Run</strong>: Click <strong>SCAN</strong>.
+4.  <strong>Review Logic</strong>:
+    *   The system extracts a signature from the Sketchy URL.
+    *   It loops through <em>every</em> signature in <code>fingerprints.json</code>.
+    *   It calculates <code>Similarity(Sketchy, Known_1)</code>, <code>Similarity(Sketchy, Known_2)</code>, etc.
+5.  <strong>Result</strong>:
+    *   "Match Found: My Trusted Market (98% Match)" -&gt; <strong>SAFE</strong>.
+    *   "No Matches Found" -&gt; <strong>DANGER / UNKNOWN</strong>.</p>
+<hr />
+<h2>5. Troubleshooting &amp; FAQ</h2>
+<p><strong>Q: My Scan Score is 0%, but it's the same site!</strong>
+*   <strong>Reason</strong>: Did you capture the PGP key?
+*   <strong>Fix</strong>: Check if the site hides its key. Try adding <code>/pgp.txt</code> to the URL manually during Ingest if the Smart Hunt failed.</p>
+<p><strong>Q: "Connection Failed" error?</strong>
+*   <strong>Reason</strong>: Your Tor Browser might be closed.
+*   <strong>Fix</strong>: Open Tor Browser. Ensure it's connected. Retry.</p>
+<p><strong>Q: PGP Extraction Failed log warning?</strong>
+*   <strong>Status</strong>: Normal.
+*   <strong>Impact</strong>: Non-fatal. The system will rely on HTTP/HTML pillars instead.</p>
+<hr />
+<p><strong>Current Version</strong>: 2.1 (Repository Architecture)
+<strong>Next Upgrade</strong>: JA3 TLS Fingerprinting for Cloudflare/DDoS-Guard detection.</p>
+            <div class="footer">Generated by Darknet Mirror Detection System v2.0</div>
+        </body>
+        </html>
+        

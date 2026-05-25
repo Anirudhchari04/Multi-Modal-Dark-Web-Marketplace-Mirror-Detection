@@ -1,0 +1,17 @@
+[
+  {
+    "old_marketplace": "http://darknet-market1.onion",
+    "new_marketplace": "http://darknet-market1-mirror.onion",
+    "likely_mirror": true
+  },
+  {
+    "old_marketplace": "http://darknet-market2.onion",
+    "new_marketplace": "http://different-site.onion",
+    "likely_mirror": false
+  },
+  {
+    "old_marketplace": "http://tradingpost.onion",
+    "new_marketplace": "http://tradingpost-backup.onion",
+    "likely_mirror": true
+  }
+]

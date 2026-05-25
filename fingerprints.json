@@ -1,0 +1,174 @@
+[
+  {
+    "url": "http://iwggpyxn6qv3b2twpwtyhi2sfvgnby2albbcotcysd5f7obrlwbdbkyd.onion/",
+    "timestamp": 1768979787.6590688,
+    "label": "weed",
+    "http": {
+      "response_time_mean": 1.4411603212356567,
+      "response_time_std": 0.8014914543957005,
+      "response_time_p95": 2.776919460296629,
+      "response_time_p99": 3.317535037994385,
+      "status_code_mode": 200,
+      "status_code_variance": 0.0,
+      "server_header": "Apache",
+      "x_powered_by": "",
+      "consistent_server_header": true,
+      "consistent_x_powered_by": true,
+      "error_rate": 0.0,
+      "timeout_rate": 0.0
+    },
+    "pgp": {
+      "fingerprints": [
+        "2D3DB7AAEC1D65887BE2B0E4DEB19F937F5BE761"
+      ],
+      "subkeys": [],
+      "algorithms": [
+        "PubKeyAlgorithm.RSAEncryptOrSign"
+      ],
+      "key_sizes": [
+        2048
+      ],
+      "creation_dates": [
+        1342926168.0
+      ],
+      "uids": [
+        "<PGPUID [UserID][2012-07-22 03:02:48+00:00] at 0x11D1BA680>"
+      ],
+      "raw_keys": [
+        "-----BEGIN PGP PUBLIC KEY BLOCK-----\r\nVersion: GnuPG v2.0.17 (MingW32)\r\n\r\nmQENBFALbVgBCADZ+AigQKVOahrksBoCRIfMKAr5wde+xvZxHcBZbE0UDwI6XjUH\r\ndP7+LkT2ZIRZ0p4/SGwnFujb+C7McICOwmTclFOo4mEUzVLBIAcopxS9MxivbB5O\r\n2jas3tvJaJ4/aI08lFdhqudGHCuIIll62koYstD4iuHVATc4ynFeOktYZBdiGXGX\r\ni94v4HgKOTBoC6ygxwVe10XcQEKbQw7KtJnY/O2rAFEvwElLdP3pvufUv4NkTA2c\r\nsT7EazPvyRHZjVIUp9AwKh1ZBr/+yuzGwq0AF+jTGX+autKDUZ4H7KvADON6+D5y\r\nOk5hUyOaWE7cP357M0Ik2oBVd+6y2i/hXG6TABEBAAG0H1Ntb2tlYWJsZXMgPHRo\r\nYW5rc0A0YnV5aW5nLmNvbT6JATgEEwECACIFAlALbVgCGwMGCwkIBwMCBhUIAgkK\r\nCwQWAgMBAh4BAheAAAoJEN6xn5N/W+dhk4EH/ixUM4DHmTm8aaQYFVJwzd6Pn7wS\r\nHu111/n3LYRxkXhtx+V5x18NMFRl64G+zytzpwzG3j5k4wZsI0Wrc3KhanI1eEL9\r\nN9wkqwbGH84T/6DzaJm9J1wq0lmPTJBqm+7nhLvq/ygCVhT96yZAItIFNDPdrj+9\r\nOkvLR4bUubXDb9Se4MPfu9yqCZKzO6NnclNF3FWqbfxsCM7AmFJ7Hv32weJHJnuj\r\ngkfZ+e4sP1vVPH5irC7KUThx7CbkmA5y2DsIn1uXmGfgV+6gz1lnDjAjY5Oo0gFt\r\nBHs5oFj8eZ9FXrMyHiRfQRpJdPWZAi9AhWfxNnCY5wb+4PLaNEu4jIRb/oW5AQ0E\r\nUAttWAEIAMUJa10Cu4ClGN+GS/6ieiuN3TrKGL652SjnOUH2wMyyygVzm4ZpNJl3\r\nOsBmSItayhJvwpv89cFcVFArUt2gu7ExSGajjJc1zt8POo3wS6ZIrl2NWM6HT1gj\r\nDmAYCjgfGuFUHjL79C8bXPsTMp7ZhFNChGsVGCkeqgi1YvXlpB6mADxmaimaNVog\r\nn3veigBjJEzYDhYRb1jglhXRaNovmbMqYG0kvZE0IrgWcMtf0ROdhKzBobAZLXXt\r\njAZKEDDojsjSQEaItR3kh5xANO+MUf2nqsvnNvboRf1tcYFtlJGB7+HIxIdiPPBG\r\nXVvg/ZOktYEP4hrPBJdebks+z/GmSgcAEQEAAYkBHwQYAQIACQUCUAttWAIbDAAK\r\nCRDesZ+Tf1vnYS4NCAC9wRO9AW6Q0iNdqGkTdSv+LOVTVhTR762XOmdnJr6FHZ9M\r\nMtcmQpQFBr6cM3mEve/9ghmyC0a4xweC7/RFggw2SaGYx9I6N/WjkV7SnTZoSMgI\r\nXKY37+qd+qHu3D5B0yfsCBmifU/cMlDVxHVmnLOFtdJSeYnr8LXTlC7LewPiT51s\r\nKNi73ljTWm0gIMstKkz6i3ZuhE5EMRyz73z3718Gt1SWKyJ0rcfJPSv1olKAcMGB\r\nSqbvbK7RGf1zw/OAvKhjwvWK3Q7Fjo//AzoUFvtWCyKpQWyxneqI4lRFb9x83PcP\r\np+/ZVjSDS/ViWuUxLoi/FDuDhOVGVQ0ELRRBweyb\r\n=ada3\r\n-----END PGP PUBLIC KEY BLOCK-----"
+      ]
+    },
+    "html": {
+      "dom_depth": 0,
+      "tag_counts": {},
+      "css_classes": [],
+      "form_info": {},
+      "link_density": 0.0,
+      "image_density": 0.0,
+      "meta_tags": {}
+    }
+  },
+  {
+    "url": "http://rfyb5tlhiqtiavwhikdlvb3fumxgqwtg2naanxtiqibidqlox5vispqd.onion/",
+    "timestamp": 1768979238.17647,
+    "label": "tom and jerry High Quality Cocaine [90%]",
+    "http": {
+      "response_time_mean": 3.5417965412139893,
+      "response_time_std": 2.604289651544387,
+      "response_time_p95": 8.483579230308528,
+      "response_time_p99": 9.696715846061707,
+      "status_code_mode": 200,
+      "status_code_variance": 0.0,
+      "server_header": "Apache",
+      "x_powered_by": "",
+      "consistent_server_header": true,
+      "consistent_x_powered_by": true,
+      "error_rate": 0.0,
+      "timeout_rate": 0.1
+    },
+    "pgp": {
+      "fingerprints": [],
+      "subkeys": [],
+      "algorithms": [],
+      "key_sizes": [],
+      "creation_dates": [],
+      "uids": [],
+      "raw_keys": []
+    },
+    "html": {
+      "dom_depth": 0,
+      "tag_counts": {},
+      "css_classes": [],
+      "form_info": {},
+      "link_density": 0.0,
+      "image_density": 0.0,
+      "meta_tags": {}
+    }
+  },
+  {
+    "url": "http://ajlu6mrc7lwulwakojrgvvtarotvkvxqosb4psxljgobjhureve4kdqd.onion/",
+    "timestamp": 1768979720.3549929,
+    "label": "420 prime",
+    "http": {
+      "response_time_mean": 0.6536112546920776,
+      "response_time_std": 0.14576571610991437,
+      "response_time_p95": 0.9174846172332762,
+      "response_time_p99": 0.9646200847625732,
+      "status_code_mode": 200,
+      "status_code_variance": 0.0,
+      "server_header": "Apache",
+      "x_powered_by": "",
+      "consistent_server_header": true,
+      "consistent_x_powered_by": true,
+      "error_rate": 0.0,
+      "timeout_rate": 0.0
+    },
+    "pgp": {
+      "fingerprints": [
+        "2D3DB7AAEC1D65887BE2B0E4DEB19F937F5BE761"
+      ],
+      "subkeys": [],
+      "algorithms": [
+        "PubKeyAlgorithm.RSAEncryptOrSign"
+      ],
+      "key_sizes": [
+        2048
+      ],
+      "creation_dates": [
+        1342926168.0
+      ],
+      "uids": [
+        "<PGPUID [UserID][2012-07-22 03:02:48+00:00] at 0x15E64E020>"
+      ],
+      "raw_keys": [
+        "-----BEGIN PGP PUBLIC KEY BLOCK-----\r\nVersion: GnuPG v2.0.17 (MingW32)\r\n\r\nmQENBFALbVgBCADZ+AigQKVOahrksBoCRIfMKAr5wde+xvZxHcBZbE0UDwI6XjUH\r\ndP7+LkT2ZIRZ0p4/SGwnFujb+C7McICOwmTclFOo4mEUzVLBIAcopxS9MxivbB5O\r\n2jas3tvJaJ4/aI08lFdhqudGHCuIIll62koYstD4iuHVATc4ynFeOktYZBdiGXGX\r\ni94v4HgKOTBoC6ygxwVe10XcQEKbQw7KtJnY/O2rAFEvwElLdP3pvufUv4NkTA2c\r\nsT7EazPvyRHZjVIUp9AwKh1ZBr/+yuzGwq0AF+jTGX+autKDUZ4H7KvADON6+D5y\r\nOk5hUyOaWE7cP357M0Ik2oBVd+6y2i/hXG6TABEBAAG0H1Ntb2tlYWJsZXMgPHRo\r\nYW5rc0A0YnV5aW5nLmNvbT6JATgEEwECACIFAlALbVgCGwMGCwkIBwMCBhUIAgkK\r\nCwQWAgMBAh4BAheAAAoJEN6xn5N/W+dhk4EH/ixUM4DHmTm8aaQYFVJwzd6Pn7wS\r\nHu111/n3LYRxkXhtx+V5x18NMFRl64G+zytzpwzG3j5k4wZsI0Wrc3KhanI1eEL9\r\nN9wkqwbGH84T/6DzaJm9J1wq0lmPTJBqm+7nhLvq/ygCVhT96yZAItIFNDPdrj+9\r\nOkvLR4bUubXDb9Se4MPfu9yqCZKzO6NnclNF3FWqbfxsCM7AmFJ7Hv32weJHJnuj\r\ngkfZ+e4sP1vVPH5irC7KUThx7CbkmA5y2DsIn1uXmGfgV+6gz1lnDjAjY5Oo0gFt\r\nBHs5oFj8eZ9FXrMyHiRfQRpJdPWZAi9AhWfxNnCY5wb+4PLaNEu4jIRb/oW5AQ0E\r\nUAttWAEIAMUJa10Cu4ClGN+GS/6ieiuN3TrKGL652SjnOUH2wMyyygVzm4ZpNJl3\r\nOsBmSItayhJvwpv89cFcVFArUt2gu7ExSGajjJc1zt8POo3wS6ZIrl2NWM6HT1gj\r\nDmAYCjgfGuFUHjL79C8bXPsTMp7ZhFNChGsVGCkeqgi1YvXlpB6mADxmaimaNVog\r\nn3veigBjJEzYDhYRb1jglhXRaNovmbMqYG0kvZE0IrgWcMtf0ROdhKzBobAZLXXt\r\njAZKEDDojsjSQEaItR3kh5xANO+MUf2nqsvnNvboRf1tcYFtlJGB7+HIxIdiPPBG\r\nXVvg/ZOktYEP4hrPBJdebks+z/GmSgcAEQEAAYkBHwQYAQIACQUCUAttWAIbDAAK\r\nCRDesZ+Tf1vnYS4NCAC9wRO9AW6Q0iNdqGkTdSv+LOVTVhTR762XOmdnJr6FHZ9M\r\nMtcmQpQFBr6cM3mEve/9ghmyC0a4xweC7/RFggw2SaGYx9I6N/WjkV7SnTZoSMgI\r\nXKY37+qd+qHu3D5B0yfsCBmifU/cMlDVxHVmnLOFtdJSeYnr8LXTlC7LewPiT51s\r\nKNi73ljTWm0gIMstKkz6i3ZuhE5EMRyz73z3718Gt1SWKyJ0rcfJPSv1olKAcMGB\r\nSqbvbK7RGf1zw/OAvKhjwvWK3Q7Fjo//AzoUFvtWCyKpQWyxneqI4lRFb9x83PcP\r\np+/ZVjSDS/ViWuUxLoi/FDuDhOVGVQ0ELRRBweyb\r\n=ada3\r\n-----END PGP PUBLIC KEY BLOCK-----"
+      ]
+    },
+    "html": {
+      "dom_depth": 0,
+      "tag_counts": {},
+      "css_classes": [],
+      "form_info": {},
+      "link_density": 0.0,
+      "image_density": 0.0,
+      "meta_tags": {}
+    }
+  },
+  {
+    "url": "http://guzjgkpodzshso2nohspxijzk5jgoaxzqioa7vzy6qdmwpz3hq4mwfid.onion/info.php",
+    "timestamp": 1768980407.511148,
+    "label": "bit pharma",
+    "http": {
+      "response_time_mean": 1.359281849861145,
+      "response_time_std": 1.2814810748380987,
+      "response_time_p95": 3.899149870872496,
+      "response_time_p99": 4.469331545829773,
+      "status_code_mode": 200,
+      "status_code_variance": 0.0,
+      "server_header": "Apache",
+      "x_powered_by": "",
+      "consistent_server_header": true,
+      "consistent_x_powered_by": true,
+      "error_rate": 0.0,
+      "timeout_rate": 0.0
+    },
+    "pgp": {
+      "fingerprints": [],
+      "subkeys": [],
+      "algorithms": [],
+      "key_sizes": [],
+      "creation_dates": [],
+      "uids": [],
+      "raw_keys": []
+    },
+    "html": {
+      "dom_depth": 0,
+      "tag_counts": {},
+      "css_classes": [],
+      "form_info": {},
+      "link_density": 0.0,
+      "image_density": 0.0,
+      "meta_tags": {}
+    }
+  }
+]

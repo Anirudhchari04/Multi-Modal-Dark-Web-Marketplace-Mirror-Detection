@@ -1,0 +1,178 @@
+{
+  "pillar_1_http": {
+    "response_time_mean": [
+      0,
+      60
+    ],
+    "response_time_std": [
+      0,
+      30
+    ],
+    "response_time_p95": [
+      0,
+      120
+    ],
+    "response_time_p99": [
+      0,
+      150
+    ],
+    "status_code_mode": [
+      100,
+      600
+    ],
+    "status_code_variance": [
+      0,
+      100
+    ],
+    "server_header_consistency": [
+      0,
+      1
+    ],
+    "x_powered_by_presence": [
+      0,
+      1
+    ],
+    "x_powered_by_consistency": [
+      0,
+      1
+    ],
+    "error_rate": [
+      0,
+      1
+    ],
+    "timeout_rate": [
+      0,
+      1
+    ],
+    "variance_coefficient": [
+      0,
+      1
+    ]
+  },
+  "pillar_2_html": {
+    "dom_depth": [
+      0,
+      50
+    ],
+    "tag_count": [
+      0,
+      1000
+    ],
+    "tag_frequency_jaccard": [
+      0,
+      1
+    ],
+    "css_classes_jaccard": [
+      0,
+      1
+    ],
+    "form_similarity": [
+      0,
+      1
+    ],
+    "input_similarity": [
+      0,
+      1
+    ],
+    "header_consistency": [
+      0,
+      1
+    ],
+    "link_density": [
+      0,
+      1
+    ],
+    "image_density": [
+      0,
+      1
+    ],
+    "script_similarity": [
+      0,
+      1
+    ],
+    "meta_consistency": [
+      0,
+      1
+    ]
+  },
+  "pillar_3_javascript": {
+    "function_overlap": [
+      0,
+      1
+    ],
+    "variable_overlap": [
+      0,
+      1
+    ],
+    "total_overlap": [
+      0,
+      1
+    ],
+    "function_count": [
+      0,
+      100
+    ],
+    "variable_count": [
+      0,
+      500
+    ],
+    "size_similarity": [
+      0,
+      1
+    ],
+    "file_count_similarity": [
+      0,
+      1
+    ],
+    "naming_consistency": [
+      0,
+      1
+    ],
+    "complexity": [
+      0,
+      1
+    ],
+    "minification": [
+      0,
+      1
+    ]
+  },
+  "pillar_4_pgp": {
+    "exact_match": [
+      0,
+      1
+    ],
+    "partial_overlap": [
+      0,
+      1
+    ],
+    "jaccard_similarity": [
+      0,
+      1
+    ],
+    "key_count": [
+      0,
+      20
+    ],
+    "length_consistency": [
+      0,
+      1
+    ],
+    "age_consistency": [
+      0,
+      1
+    ],
+    "freshness": [
+      0,
+      1
+    ],
+    "strength": [
+      0,
+      1
+    ],
+    "uniqueness": [
+      0,
+      1
+    ]
+  }
+}
